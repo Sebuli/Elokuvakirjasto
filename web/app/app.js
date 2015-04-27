@@ -4,41 +4,18 @@ var MovieApp = angular
     $routeProvider
             .when('/', {
                 controller: 'movieAddController',
-                template: '<form name="movieForm"><input type="text" placeholder="Elokuvan nimi" ng-model="newName" required><input type="text" placeholder="Elokuvan ohjaaja" ng-model="newDirector" required><input type="text" placeholder="Elokuvan kuvausvuosi" ng-model="newYear" required><input type="text" placeholder="Elokuvan kuvaus" ng-model="newDesc" required><input type = "submit" value="Lisää elokuva" ng-click="addMovies()" ng-disabled="movieForm.$invalid"></form>'
-            })
+                templateUrl: 'app/view/lisays.html'
+                    })
             .when('/movies', {
                 controller: 'movieAddController',
-                template: '<form name="movieForm"><input type="text" placeholder="Elokuvan nimi" ng-model="newName" required><input type="text" placeholder="Elokuvan ohjaaja" ng-model="newDirector" required><input type="text" placeholder="Elokuvan kuvausvuosi" ng-model="newYear" required><input type="text" placeholder="Elokuvan kuvaus" ng-model="newDesc" required><input type = "submit" value="Lisää elokuva" ng-click="addMovies()" ng-disabled="movieForm.$invalid"></form><li ng-repeat="movie in movies", style="list-style: none"><h1>{{movie.name}} ({{movie.year}})</h1><p>{{movie.desc}}</p><b>Director</b><p>{{movie.director}}</p></li>'
+                templateUrl: 'app/view/lista.html'
             })
             .when('/movies/new', {
                 controller: 'movieAddController',
-                template: '<form name="movieForm"><input type="text" placeholder="Elokuvan nimi" ng-model="newName" required><input type="text" placeholder="Elokuvan ohjaaja" ng-model="newDirector" required><input type="text" placeholder="Elokuvan kuvausvuosi" ng-model="newYear" required><input type="text" placeholder="Elokuvan kuvaus" ng-model="newDesc" required><input type = "submit" value="Lisää elokuva" ng-click="addMovies()" ng-disabled="movieForm.$invalid"></form>'
+                templateUrl: 'app/view/lisays.html'
             })
             .otherwise({
                 redirectTo: '/'
             });
 });
 
-MovieApp.controller('movieAddController', function ($scope, FirebaseService, $location) {
-    
-    $scope.movies = FirebaseService.getMovies();
-    
-    $scope.addMovies = function () {
-        FirebaseService.addMovie({
-            name: $scope.newName,
-            director: $scope.newDirector,
-            year: $scope.newYear,
-            desc: $scope.newDesc
-        });
-
-        $scope.newName = '';
-        $scope.newDirector = '';
-        $scope.newYear = '';
-        $scope.newDesc = '';
-        $location.path('/movies');
-    };
-});
-
-MovieApp.controller('movieListController', function ($scope, FirebaseService) {
-    
-});

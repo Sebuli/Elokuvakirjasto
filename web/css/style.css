@@ -1,0 +1,42 @@
+.movie-name:hover, .movie-name:focus{
+    border: 1px solid rgb(220,220,220);
+}
+.movie-name{
+    font-size: 200%;
+    padding: 10px 10px;
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    border: 1px solid white;
+}
+.movie-desc:hover, .movie-desc:focus{
+    border: 1px solid rgb(220,220,220);
+}
+.movie-desc{
+    padding: 10px 10px;
+    display: inline-block;
+    width: 850px;
+    text-align: left;
+    border: 1px solid white;
+}
+.movie-direc{
+    padding: 10px 10px;
+    display: inline-block;
+    width: 200px;
+    text-align: left;
+    border: 1px solid white;
+}
+
+.poista{
+    background-color: #C63717;
+    border: 1px solid #C63717;
+    color: white;
+    padding: 10px 14px;
+    float: right;
+}
+
+.movie-container{
+    padding: 10px;
+    width: 900px;
+    border: 1px solid rgb(220,220,220);
+}

@@ -1,0 +1,18 @@
+<div id="add-movie-container">
+    <form name="movieForm">
+        <input type="text" placeholder="Elokuvan nimi" ng-model="newName" required>
+        <input type="text" placeholder="Elokuvan ohjaaja" ng-model="newDirector" required>
+        <input type="text" placeholder="Elokuvan kuvausvuosi" ng-model="newYear" required>
+        <input type="text" placeholder="Elokuvan kuvaus" ng-model="newDesc" required>
+        <input type = "submit" value="Lisää elokuva" ng-click="addMovies()" ng-disabled="movieForm.$invalid">
+    </form>
+</div>
+<li  ng-repeat="movie in movies", style="list-style: none">
+    <div class="movie-container">
+        <div><input type="text" ng-model="movie.name" ng-blur="changeMovie(movie)" class="movie-name"> <input type="text" ng-model="movie.year" ng-blur="changeMovie(movie)" class="movie-name"><input class="poista" type = "submit" value="Poista" ng-click="removeMovie(movie)"></div>
+        <b>Description</b>
+        <input type="text" ng-model="movie.desc" ng-blur="changeMovie(movie)" class="movie-desc">
+        <b>Director</b>
+        <input type="text" ng-model="movie.director" ng-blur="changeMovie(movie)" class="movie-direc">
+    </div>
+</li>

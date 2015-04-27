@@ -30,6 +30,10 @@ MovieApp.controller('movieAddController', function ($scope, FirebaseService, $lo
     $scope.setMovies = function (movies) {
         $scope.movies = movies;
     };
+    
+    $scope.changeMovie = function (movie) {
+        FirebaseService.changeMovie(movie);
+    };
 
 
 });

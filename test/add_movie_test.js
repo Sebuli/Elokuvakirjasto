@@ -46,6 +46,10 @@ describe('Add movie', function () {
         // Lisää vakoilijat
         // spyOn(FirebaseServiceMock, 'jokuFunktio').and.callThrough();
 
+        spyOn(FirebaseServiceMock, 'addMovie').and.callThrough();
+        spyOn(FirebaseServiceMock, 'removeMovie').and.callThrough();
+        spyOn(FirebaseServiceMock, 'getMovies').and.callThrough();
+
         // Injektoi toteuttamasi kontrolleri tähän
         inject(function ($controller, $rootScope) {
             scope = $rootScope.$new();
@@ -74,6 +78,7 @@ describe('Add movie', function () {
         scope.newDesc = 'Khyl';
         scope.addMovies();
         expect(scope.movies.length).toBe(3);
+        expect(FirebaseServiceMock.addMovie).toHaveBeenCalled();
     });
 
     /*	
@@ -89,5 +94,6 @@ describe('Add movie', function () {
         scope.newDesc = '';
         scope.addMovies();
         expect(scope.movies.length).toBe(2);
+        expect(FirebaseServiceMock.addMovie).not.toHaveBeenCalled();
     });
 });

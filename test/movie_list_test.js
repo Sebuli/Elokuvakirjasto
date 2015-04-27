@@ -45,6 +45,10 @@ describe('Movie list', function () {
 
         // Lisää vakoilijat
         // spyOn(FirebaseServiceMock, 'jokuFunktio').and.callThrough();
+        
+        spyOn(FirebaseServiceMock, 'addMovie').and.callThrough();
+        spyOn(FirebaseServiceMock, 'removeMovie').and.callThrough();
+        spyOn(FirebaseServiceMock, 'getMovies').and.callThrough();
 
         // Injektoi toteuttamasi kontrolleri tähän
         inject(function ($controller, $rootScope) {
@@ -79,5 +83,6 @@ describe('Movie list', function () {
         var movie = scope.movies[0];
         scope.removeMovie(movie);
         expect(scope.movies.length).toBe(1);
+        expect(FirebaseServiceMock.removeMovie).toHaveBeenCalled();
     });
 });

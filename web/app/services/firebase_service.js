@@ -8,11 +8,20 @@ MovieApp.service('FirebaseService', function ($firebase) {
         return movies;
     }
 
-    this.addMovie = function(movie) {
+    this.addMovie = function (movie) {
         movies.$add(movie);
     }
     this.removeMovie = function (movie) {
         movies.$remove(movie);
     }
+    
+    this.getMovie = function (key, done) {
+        movies.$loaded(function () {
+            done(movies.$getRecord(key));
+        });
+    }
+    this.changeMovie = function (movie) {
+        movies.$save(movie);
+    };
 
 });
