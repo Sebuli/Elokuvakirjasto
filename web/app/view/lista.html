@@ -7,6 +7,7 @@
         <input class="lisaa" type = "submit" value="Lisää elokuva" ng-click="addMovies()" ng-disabled="movieForm.$invalid">
     </form>
 </div>
+
 <li ng-repeat="movie in movies", style="list-style: none">
     <div class="movie-container">
         <div><a class="elokuva" ng-href="#/movies/{{movie.$id}}">{{movie.name}}</a> <a class="elokuva">({{movie.year}})</a><input class="poista" type = "submit" value="Poista" ng-click="removeMovie(movie)"><a ng-href="#/movies/{{movie.$id}}/edit" class="editoi" type = "submit" value="Editoi">Editoi</a></div>

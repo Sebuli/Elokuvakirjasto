@@ -1,4 +1,4 @@
-MovieApp.controller('movieAddController', function ($scope, FirebaseService, $location, $routeParams) {
+MovieApp.controller('movieAddController', function ($scope, FirebaseService, $location, $routeParams, $http) {
 
     $scope.movies = FirebaseService.getMovies();
 
@@ -33,29 +33,27 @@ MovieApp.controller('movieAddController', function ($scope, FirebaseService, $lo
 
     $scope.changeMovie = function (movie) {
 
-        
+
         if ($scope.editName) {
             movie.name = $scope.editName;
-        } 
-        
+        }
+
         if ($scope.editYear && $scope.editYear > 1000) {
             movie.year = $scope.editYear;
-        } 
-        
+        }
+
         if ($scope.editDesc) {
             movie.desc = $scope.editDesc;
-        } 
+        }
         if ($scope.editDirector) {
             movie.director = $scope.editDirector;
-        } 
-        
+        }
+
         FirebaseService.changeMovie(movie);
         $location.path('/movies');
     };
 
     $scope.getMovie = function () {
-        console.log($location);
-        console.log($routeParams);
         $scope.nykyinen = $scope.movies[$routeParams.movieid.toLowerCase()];
 
     };
@@ -63,6 +61,18 @@ MovieApp.controller('movieAddController', function ($scope, FirebaseService, $lo
 
     $scope.nykyinen = FirebaseService.getMovie($routeParams.movieid);
 
+    $scope.haeElokuva = function () {
+        
+        $http.get('http://www.omdbapi.com', {params: {s: $scope.hakuElokuva, y:$scope.hakuVuosi}}).success(function (movies) {
+            
+            $scope.tulokset = movies.Search;
+            $scope.onkoTotta = true;
+            if (!$scope.tulokset) {
+                $scope.tulokset = [];
+            }
+            
+        });
 
+    };
 
 });

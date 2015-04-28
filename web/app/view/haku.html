@@ -1,0 +1,21 @@
+<h2> Hae Elokuvia</h2> 
+<form name="movieForm">
+    <p>Nimi</p>
+    <input type="text" placeholder="Elokuva" ng-model="hakuElokuva" required>
+    <p>Julkaisuvuosi</p>
+    <input type="text" placeholder="Vuosi" ng-model="hakuVuosi">
+    <input class="hae" type = "submit" value="Hae" ng-click="haeElokuva()" ng-disabled="movieForm.$invalid">
+</form>
+
+<div class="montako" ng-show=onkoTotta>
+    <ng-pluralize count="tulokset.Search.length"
+                  when="{'0': 'Hakusanalla ei löytynyt elokuvia',
+                  'one': 'Haulla löytyi {} elokuva',
+                  'other': 'Haulla löytyi {} elokuvaa'}">
+    </ng-pluralize>
+
+</div>
+
+<li ng-repeat="movie in tulokset", style="list-style: none">
+    <div><a class="elokuvaTulos" ng-href="http://www.imdb.com/title/{{movie.imdbID}}">{{movie.Title}}</a> <a class="elokuvaVuosi">{{movie.Year}}</a></div>
+</li>

@@ -81,7 +81,7 @@
 a{
     font-family: Verdana;
     text-decoration: none; 
-    font-size: 75%;
+    font-size: 60%;
 }
 h1{
     font-family: Verdana;
@@ -98,6 +98,24 @@ h1{
     font-family: Calibri;
     text-decoration: none; 
     font-size: 200%;
+}
+.elokuvaTulos {
+
+    font-family: Calibri;
+    text-decoration: none; 
+    font-size: 100%;
+}
+.elokuvaVuosi {
+    float: right;
+    font-family: Calibri;
+    text-decoration: none; 
+    font-size: 100%;
+}
+.montako {
+
+    font-family: Calibri;
+    text-decoration: none; 
+    font-size: 150%;
 }
 .elo{
     font-family: Calibri;
