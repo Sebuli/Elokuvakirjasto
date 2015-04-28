@@ -14,8 +14,18 @@ var MovieApp = angular
                 controller: 'movieAddController',
                 templateUrl: 'app/view/lisays.html'
             })
+            .when('/movies/:movieid', {
+                controller: 'movieAddController',
+                templateUrl: 'app/view/elokuva.html'
+            })
+            .when('/movies/:movieid/edit', {
+                controller: 'movieAddController',
+                templateUrl: 'app/view/editoi.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });
+            
+            
 });
 

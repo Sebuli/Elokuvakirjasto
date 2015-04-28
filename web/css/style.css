@@ -1,11 +1,30 @@
 .movie-name:hover, .movie-name:focus{
     border: 1px solid rgb(220,220,220);
 }
+.lisays{
+    font-size: 75%;
+    padding: 10px 10px;
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    border: 1px solid rgb(220,220,220);
+}
 .movie-name{
     font-size: 200%;
     padding: 10px 10px;
     display: inline-block;
     width: auto;
+    text-align: left;
+    border: 1px solid white;
+}
+.movie-year:hover, .movie-year:focus{
+    border: 1px solid rgb(220,220,220);
+}
+.movie-year{
+    font-size: 200%;
+    padding: 10px 10px;
+    display: inline-block;
+    width: 200px;
     text-align: left;
     border: 1px solid white;
 }
@@ -18,6 +37,9 @@
     width: 850px;
     text-align: left;
     border: 1px solid white;
+}
+.movie-direc:hover, .movie-direc:focus{
+    border: 1px solid rgb(220,220,220);
 }
 .movie-direc{
     padding: 10px 10px;
@@ -34,9 +56,49 @@
     padding: 10px 14px;
     float: right;
 }
+.lisaa{
+    background-color: green;
+    border: 1px solid black;
+    color: white;
+    padding: 10px 14px;
+    float: none;
+}
+
+.editoi{
+    background-color: blue;
+    border: 1.9px solid black;
+    color: white;
+    padding: 10px 14px;
+    float: right;
+}
 
 .movie-container{
     padding: 10px;
     width: 900px;
     border: 1px solid rgb(220,220,220);
+}
+
+a{
+    font-family: Verdana;
+    text-decoration: none; 
+    font-size: 75%;
+}
+h1{
+    font-family: Verdana;
+    text-decoration: none; 
+    font-size: 300%;
+}
+
+.add-movie-container{
+    padding: 10px;
+    border: 1px solid rgb(220,220,220);
+}
+
+.elokuva {
+    font-family: Calibri;
+    text-decoration: none; 
+    font-size: 200%;
+}
+.elo{
+    font-family: Calibri;
 }

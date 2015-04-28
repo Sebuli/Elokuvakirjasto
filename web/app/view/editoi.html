@@ -1,0 +1,9 @@
+<form name="form">
+    <div class="movie-container">
+        <div><input type="text" placeholder="Uusi nimi" ng-model="editName" class="movie-name"><input type="text" placeholder="Uusi vuosi" ng-model="editYear" class="movie-year"><input ng-click="changeMovie(nykyinen)" class="editoi" type = "submit" value="Lopeta editointi"></div>
+        <b class="elo">Description</b>
+        <input type="text" placeholder="Uusi kuvaus" ng-model="editDesc" class="movie-desc">
+        <b class="elo">Director</b>
+        <input type="text" placeholder="Uusi ohjaaja" ng-model="editDirector" class="movie-direc">
+    </div>
+</form>

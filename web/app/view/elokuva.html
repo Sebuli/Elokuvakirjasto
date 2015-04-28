@@ -1,0 +1,7 @@
+<div class="movie-container">
+    <div><a class="elokuva" ng-href="#/movies/{{nykyinen.$id}}">{{nykyinen.name}}</a> <a class="elokuva">({{nykyinen.year}})</a><a ng-href="#/movies/{{nykyinen.$id}}/edit" class="editoi" type = "submit" value="Editoi">Editoi</a></div>
+    <b class="elo" >Description</b>
+    <p class="elo">{{nykyinen.desc}}</p>
+    <b class="elo">Director</b>
+    <p class="elo">{{nykyinen.director}}</p>
+</div>
